@@ -1,0 +1,121 @@
+{
+    "fecha": "2026-11-16T21:55:28.296609",
+    "total_casos": 8,
+    "correctos": 5,
+    "incorrectos": 3,
+    "errores_ejecucion": 0,
+    "porcentaje_acierto": 62.5,
+    "porcentaje_incorrectos": 37.5,
+    "porcentaje_error_ejecucion": 0.0,
+    "resultados": [
+        {
+            "caso": "Suplantación bancaria",
+            "esperado": "CRÍTICO",
+            "obtenido": "CRÍTICO",
+            "correcto": true,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características típicas de una campaña de phishing diseñada para el robo de credenciales bancarias mediante la creación de un sentido de urgencia falso.",
+            "indicadores": [
+                "Uso de lenguaje alarmista y urgente para inducir pánico",
+                "Amenaza de bloqueo de cuenta como táctica de ingeniería social",
+                "Enlace a un dominio sospechoso que no corresponde a una entidad bancaria legítima",
+                "Solicitud directa de credenciales de acceso"
+            ]
+        },
+        {
+            "caso": "Código de verificación solicitado",
+            "esperado": "CRÍTICO",
+            "obtenido": "CRÍTICO",
+            "correcto": true,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta indicadores claros de un intento de suplantación de identidad (phishing) mediante ingeniería social, buscando obtener acceso no autorizado a una cuenta mediante el robo de un código de verificación.",
+            "indicadores": [
+                "Solicitud de información sensible (código SMS)",
+                "Uso de tácticas de miedo o urgencia (amenaza de bloqueo de cuenta)",
+                "Remitente no verificado que se hace pasar por soporte técnico",
+                "Ausencia de personalización o datos de contacto oficiales"
+            ]
+        },
+        {
+            "caso": "Premio falso",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características clásicas de una estafa de tipo 'advance-fee fraud' o fraude de pago por adelantado, donde se utiliza la promesa de un premio inexistente para obtener dinero y datos financieros de la víctima.",
+            "indicadores": [
+                "Promesa de premio gratuito sin participación previa",
+                "Solicitud de pago de una tasa para liberar un beneficio",
+                "Solicitud directa de datos bancarios",
+                "Uso de ingeniería social para generar urgencia o codicia"
+            ]
+        },
+        {
+            "caso": "Falso mensaje de entrega",
+            "esperado": "ALTO",
+            "obtenido": "ALTO",
+            "correcto": true,
+            "puntuacion": 90,
+            "resumen": "El mensaje presenta características típicas de una campaña de phishing diseñada para el robo de datos financieros o personales mediante la suplantación de una empresa de logística.",
+            "indicadores": [
+                "Uso de sentido de urgencia para forzar una acción rápida",
+                "Notificación sobre un paquete retenido sin proporcionar número de seguimiento ni nombre de empresa real",
+                "Enlace sospechoso que no corresponde a un dominio oficial de servicios de mensajería",
+                "Solicitud de pago inesperada para liberar un envío"
+            ]
+        },
+        {
+            "caso": "Enlace desconocido",
+            "esperado": "MEDIO",
+            "obtenido": "ALTO",
+            "correcto": false,
+            "puntuacion": 8,
+            "resumen": "El enlace proporcionado dirige a un dominio desconocido y no verificado, lo cual es una señal de alerta común en campañas de phishing o distribución de malware.",
+            "indicadores": [
+                "Dominio no reconocido o sin reputación establecida",
+                "Uso de una estructura de URL genérica",
+                "Falta de contexto sobre el origen del enlace"
+            ]
+        },
+        {
+            "caso": "Aviso informativo legítimo",
+            "esperado": "BAJO",
+            "obtenido": "BAJO",
+            "correcto": true,
+            "puntuacion": 10,
+            "resumen": "El mensaje es una comunicación interna genérica sobre una reunión. No presenta indicadores claros de phishing, urgencia extrema, amenazas o enlaces sospechosos.",
+            "indicadores": [
+                "Ausencia de enlaces externos",
+                "Ausencia de lenguaje coercitivo o de urgencia",
+                "Formato de comunicación corporativa estándar"
+            ]
+        },
+        {
+            "caso": "Conversación cotidiana",
+            "esperado": "BAJO",
+            "obtenido": "BAJO",
+            "correcto": true,
+            "puntuacion": 20,
+            "resumen": "El mensaje es ambiguo y carece de contexto, lo que podría ser una técnica de ingeniería social conocida como 'pretexting' para iniciar una conversación, aunque también podría ser un mensaje legítimo enviado por error o a la persona equivocada.",
+            "indicadores": [
+                "Falta de identificación del remitente",
+                "Ambigüedad en el propósito del mensaje",
+                "Ausencia de contexto previo"
+            ]
+        },
+        {
+            "caso": "Amenaza de suspensión y solicitud de pago",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características típicas de una estafa de ingeniería social diseñada para generar urgencia y miedo con el fin de obtener una transferencia económica fraudulenta.",
+            "indicadores": [
+                "Uso de lenguaje alarmista y urgente",
+                "Amenaza de suspensión de cuenta sin causa justificada",
+                "Solicitud directa de transferencia de dinero",
+                "Ausencia de identificación oficial o canal de soporte legítimo"
+            ]
+        }
+    ]
+}

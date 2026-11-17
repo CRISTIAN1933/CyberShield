@@ -1,0 +1,122 @@
+{
+    "fecha": "2026-11-16T22:47:55.550697",
+    "total_casos": 8,
+    "correctos": 6,
+    "incorrectos": 2,
+    "errores_ejecucion": 0,
+    "porcentaje_acierto": 75.0,
+    "porcentaje_incorrectos": 25.0,
+    "porcentaje_error_ejecucion": 0.0,
+    "resultados": [
+        {
+            "caso": "Suplantación bancaria",
+            "esperado": "CRÍTICO",
+            "obtenido": "CRÍTICO",
+            "correcto": true,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características claras de un intento de phishing diseñado para el robo de credenciales bancarias mediante la creación de un sentido de urgencia artificial.",
+            "indicadores": [
+                "Uso de lenguaje alarmista y urgente (URGENTE)",
+                "Amenaza de bloqueo de cuenta para forzar una acción rápida",
+                "Solicitud directa de credenciales de acceso",
+                "Dominio sospechoso que no corresponde a una entidad bancaria legítima"
+            ]
+        },
+        {
+            "caso": "Código de verificación solicitado",
+            "esperado": "CRÍTICO",
+            "obtenido": "CRÍTICO",
+            "correcto": true,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta indicadores claros de un intento de ingeniería social y suplantación de identidad (phishing). El atacante utiliza la urgencia y el miedo al bloqueo de cuenta para manipular a la víctima y obtener un código de verificación SMS, el cual es una credencial de seguridad crítica.",
+            "indicadores": [
+                "Uso de urgencia artificial para forzar una acción rápida",
+                "Solicitud directa de un código de verificación SMS",
+                "Pretensión de autoridad (soporte de seguridad) sin validación",
+                "Ausencia de personalización o datos específicos de la cuenta"
+            ]
+        },
+        {
+            "caso": "Premio falso",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta indicadores claros de una estafa de tipo phishing y fraude financiero. Utiliza la técnica de ingeniería social basada en la promesa de un premio inexistente para inducir a la víctima a realizar un pago y revelar información bancaria sensible.",
+            "indicadores": [
+                "Promesa de premio gratuito sin participación previa",
+                "Solicitud de pago de una tasa para liberar un beneficio",
+                "Solicitud directa de datos bancarios",
+                "Uso de lenguaje persuasivo y urgente típico de ingeniería social"
+            ]
+        },
+        {
+            "caso": "Falso mensaje de entrega",
+            "esperado": "ALTO",
+            "obtenido": "ALTO",
+            "correcto": true,
+            "puntuacion": 85,
+            "resumen": "El mensaje presenta características típicas de una campaña de phishing mediante ingeniería social, utilizando la urgencia sobre un paquete retenido para inducir a la víctima a realizar un pago en un sitio web potencialmente malicioso.",
+            "indicadores": [
+                "Uso de sentido de urgencia para forzar una acción rápida",
+                "Pretexto común de paquetería retenida para robo de datos financieros",
+                "Enlace sospechoso que no corresponde a una entidad de logística oficial",
+                "Ausencia de personalización o datos específicos del envío"
+            ]
+        },
+        {
+            "caso": "Enlace desconocido",
+            "esperado": "MEDIO",
+            "obtenido": "MEDIO",
+            "correcto": true,
+            "puntuacion": 5,
+            "resumen": "El enlace proporcionado utiliza un dominio de ejemplo (example.com), el cual está reservado para documentación y pruebas, lo que genera desconfianza al no corresponder a una entidad legítima o reconocida.",
+            "indicadores": [
+                "Uso de dominio de ejemplo (example.com)",
+                "Remitente desconocido",
+                "Falta de contexto sobre el propósito del enlace"
+            ]
+        },
+        {
+            "caso": "Aviso informativo legítimo",
+            "esperado": "BAJO",
+            "obtenido": "BAJO",
+            "correcto": true,
+            "puntuacion": 10,
+            "resumen": "El mensaje es breve y carece de elementos típicos de phishing como enlaces sospechosos, sentido de urgencia extrema o solicitudes de información sensible. Sin embargo, al ser un mensaje genérico, no se puede descartar totalmente un intento de ingeniería social si el contexto no es el esperado.",
+            "indicadores": [
+                "Ausencia de enlaces externos",
+                "Ausencia de archivos adjuntos",
+                "Tono profesional y neutral",
+                "Falta de personalización o datos específicos de la empresa"
+            ]
+        },
+        {
+            "caso": "Conversación cotidiana",
+            "esperado": "BAJO",
+            "obtenido": "BAJO",
+            "correcto": true,
+            "puntuacion": 2,
+            "resumen": "El mensaje es una comunicación genérica y ambigua que no contiene enlaces, archivos adjuntos ni solicitudes de información sensible. Aunque podría ser un intento de ingeniería social para establecer contacto (pretexting), no presenta indicadores técnicos de amenaza en este momento.",
+            "indicadores": [
+                "Mensaje genérico sin contexto específico",
+                "Ausencia de firma o identificación clara del remitente",
+                "Intento de establecer una interacción personal"
+            ]
+        },
+        {
+            "caso": "Amenaza de suspensión y solicitud de pago",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 90,
+            "resumen": "El mensaje presenta características típicas de una estafa de ingeniería social diseñada para generar urgencia y miedo con el fin de obtener un beneficio económico ilícito.",
+            "indicadores": [
+                "Uso de lenguaje alarmista y urgente",
+                "Amenaza de suspensión de cuenta sin causa justificada",
+                "Solicitud de transferencia de dinero para resolver un problema técnico o administrativo",
+                "Ausencia de personalización o datos de contacto oficiales"
+            ]
+        }
+    ]
+}

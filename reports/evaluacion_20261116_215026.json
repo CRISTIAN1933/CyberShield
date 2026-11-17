@@ -1,0 +1,124 @@
+{
+    "fecha": "2026-11-16T21:50:26.442782",
+    "total_casos": 8,
+    "correctos": 4,
+    "incorrectos": 4,
+    "errores_ejecucion": 0,
+    "porcentaje_acierto": 50.0,
+    "porcentaje_incorrectos": 50.0,
+    "porcentaje_error_ejecucion": 0.0,
+    "resultados": [
+        {
+            "caso": "Suplantación bancaria",
+            "esperado": "CRÍTICO",
+            "obtenido": "CRÍTICO",
+            "correcto": true,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características típicas de un ataque de phishing diseñado para robar credenciales bancarias mediante la creación de un sentido de urgencia falso.",
+            "indicadores": [
+                "Uso de lenguaje alarmista y urgente",
+                "Solicitud directa de credenciales de acceso",
+                "Dominio sospechoso que no corresponde a una entidad bancaria legítima",
+                "Amenaza de bloqueo de cuenta para forzar la acción del usuario"
+            ]
+        },
+        {
+            "caso": "Código de verificación solicitado",
+            "esperado": "CRÍTICO",
+            "obtenido": "CRÍTICO",
+            "correcto": true,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características claras de un intento de phishing diseñado para obtener acceso no autorizado a una cuenta mediante la suplantación de identidad de un servicio de soporte técnico.",
+            "indicadores": [
+                "Uso de sentido de urgencia para inducir al error",
+                "Solicitud de información sensible (código SMS)",
+                "Suplantación de identidad de soporte técnico",
+                "Ausencia de personalización o identificación oficial"
+            ]
+        },
+        {
+            "caso": "Premio falso",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características clásicas de una estafa de tipo phishing o fraude de premio falso, diseñada para obtener dinero y datos financieros de la víctima mediante ingeniería social.",
+            "indicadores": [
+                "Promesa de un premio gratuito no solicitado",
+                "Solicitud de pago previo para recibir un beneficio",
+                "Solicitud de datos bancarios sensibles",
+                "Uso de lenguaje persuasivo y urgente"
+            ]
+        },
+        {
+            "caso": "Falso mensaje de entrega",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características típicas de una estafa de phishing diseñada para robar información financiera o credenciales bajo la falsa premisa de un paquete retenido.",
+            "indicadores": [
+                "Uso de sentido de urgencia para forzar una acción rápida",
+                "Notificación sobre un paquete retenido sin número de seguimiento ni empresa de logística identificada",
+                "Solicitud de pago a través de un enlace externo no oficial",
+                "Dominio sospechoso en la URL proporcionada"
+            ]
+        },
+        {
+            "caso": "Enlace desconocido",
+            "esperado": "MEDIO",
+            "obtenido": "ALTO",
+            "correcto": false,
+            "puntuacion": 85,
+            "resumen": "El enlace proporcionado dirige a un dominio desconocido y no verificado, lo cual es una práctica común en campañas de phishing o distribución de malware. La falta de contexto sobre el origen del mensaje aumenta significativamente la probabilidad de que se trate de un intento de fraude.",
+            "indicadores": [
+                "Dominio no reconocido o sospechoso",
+                "Ausencia de contexto o remitente legítimo",
+                "Potencial técnica de ingeniería social para capturar datos"
+            ]
+        },
+        {
+            "caso": "Aviso informativo legítimo",
+            "esperado": "BAJO",
+            "obtenido": "BAJO",
+            "correcto": true,
+            "puntuacion": 10,
+            "resumen": "El mensaje analizado es una comunicación interna de carácter administrativo y no presenta indicadores claros de phishing, ingeniería social o actividad maliciosa.",
+            "indicadores": [
+                "Ausencia de enlaces externos",
+                "Tono profesional y directo",
+                "Falta de sentido de urgencia o amenazas",
+                "No solicita información sensible o credenciales"
+            ]
+        },
+        {
+            "caso": "Conversación cotidiana",
+            "esperado": "BAJO",
+            "obtenido": "BAJO",
+            "correcto": true,
+            "puntuacion": 2,
+            "resumen": "El mensaje es una consulta genérica y ambigua que no contiene elementos maliciosos evidentes, enlaces ni solicitudes de información sensible.",
+            "indicadores": [
+                "Ausencia de enlaces",
+                "Ausencia de sentido de urgencia",
+                "Lenguaje genérico",
+                "Falta de contexto específico"
+            ]
+        },
+        {
+            "caso": "Amenaza de suspensión y solicitud de pago",
+            "esperado": "ALTO",
+            "obtenido": "CRÍTICO",
+            "correcto": false,
+            "puntuacion": 95,
+            "resumen": "El mensaje presenta características típicas de una estafa de tipo phishing con ingeniería social, utilizando la urgencia y el miedo para forzar una acción financiera inmediata.",
+            "indicadores": [
+                "Uso de lenguaje alarmista y urgente",
+                "Amenaza de suspensión de cuenta sin causa justificada",
+                "Solicitud directa de transferencia de dinero",
+                "Ausencia de personalización o datos específicos de la cuenta",
+                "Falta de canales oficiales de comunicación"
+            ]
+        }
+    ]
+}
