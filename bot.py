@@ -360,6 +360,13 @@ def analizar_indicadores(texto: str):
 # 6. INTELIGENCIA ARTIFICIAL - GOOGLE GEMINI
 # ============================================================
 
+# ============================================================
+# 6. INTELIGENCIA ARTIFICIAL - GOOGLE GEMINI (CON FUNCTION CALLING)
+# ============================================================
+# ============================================================
+# 6. INTELIGENCIA ARTIFICIAL - GOOGLE GEMINI (CON FUNCTION CALLING)
+# ============================================================
+
 async def conversar_con_gemini(user_id: int, nuevo_mensaje: str):
     if not GEMINI_API_KEY:
         return "Lo siento, la inteligencia artificial no está configurada en este momento."
@@ -368,17 +375,36 @@ async def conversar_con_gemini(user_id: int, nuevo_mensaje: str):
     guardar_mensaje_chat(user_id, "user", nuevo_mensaje)
 
     # Obtener historial previo de SQLite para mantener memoria y persistencia
-    historial_previo = obtener_mensajes_chat(user_id, limite=10)
+    contents = obtener_mensajes_chat(user_id, limite=10)
+
+    # Definición de herramientas (Tools / Function Calling)
+    tools = [
+        {
+            "function_declarations": [
+                {
+                    "name": "verificar_url_virustotal",
+                    "description": "Verifica una URL, enlace o dominio sospechoso utilizando la API de VirusTotal para detectar amenazas maliciosas o sospechosas.",
+                    "parameters": {
+                        "type": "OBJECT",
+                        "properties": {
+                            "url": {
+                                "type": "STRING",
+                                "description": "La URL exacta o dominio que se quiere analizar."
+                            }
+                        },
+                        "required": ["url"]
+                    }
+                }
+            ]
+        }
+    ]
 
     payload = {
         "system_instruction": {
-            "parts": [
-                {
-                    "text": SYSTEM_PROMPT
-                }
-            ]
+            "parts": [{"text": SYSTEM_PROMPT}]
         },
-        "contents": historial_previo,
+        "contents": contents,
+        "tools": tools,
         "generationConfig": {
             "temperature": 0.4,
             "maxOutputTokens": 1500
@@ -386,6 +412,7 @@ async def conversar_con_gemini(user_id: int, nuevo_mensaje: str):
     }
 
     try:
+        # El cliente HTTP permanece abierto durante toda la interacción con la IA
         async with httpx.AsyncClient(timeout=TIMEOUT) as client:
             response = await client.post(
                 GEMINI_URL,
@@ -395,27 +422,93 @@ async def conversar_con_gemini(user_id: int, nuevo_mensaje: str):
             response.raise_for_status()
             data = response.json()
 
-        candidatos = data.get("candidates", [])
-        if not candidatos:
-            return "No pude procesar una respuesta en este momento."
+            candidatos = data.get("candidates", [])
+            if not candidatos:
+                return "No pude procesar una respuesta en este momento."
 
-        partes = candidatos[0].get("content", {}).get("parts", [])
-        respuesta_ia = "\n".join(
-            parte.get("text", "") for parte in partes if parte.get("text")
-        ).strip()
+            candidato = candidatos[0]
+            partes = candidato.get("content", {}).get("parts", [])
 
-        if respuesta_ia:
-            # Guardar respuesta del modelo en SQLite
-            guardar_mensaje_chat(user_id, "model", respuesta_ia)
-            return respuesta_ia
+            # 1. Comprobar si el modelo decidió invocar una función propia
+            function_call = None
+            for parte in partes:
+                if "functionCall" in parte:
+                    function_call = parte["functionCall"]
+                    break
 
-        return "No obtuve respuesta de la IA."
+            if function_call:
+                func_name = function_call.get("name")
+                func_args = function_call.get("args", {})
+                
+                # --- SALIDA VISIBLE EN LA TERMINAL (Requisito Hito 3) ---
+                print("\n" + "="*60)
+                print(f"[TERMINAL] 🛠️ [FUNCTION CALLING] Gemini decidió usar la función: '{func_name}'")
+                print(f"[TERMINAL] 📋 Argumentos enviados por el modelo: {func_args}")
+                print("="*60 + "\n")
+                logger.info("Gemini invocó función propia: %s con args: %s", func_name, func_args)
+
+                resultado_funcion = {}
+                if func_name == "verificar_url_virustotal":
+                    url_a_revisar = func_args.get("url", "")
+                    try:
+                        # Consulta a la API externa real con manejo de errores
+                        resultado_funcion = await verificar_virustotal(url_a_revisar)
+                    except Exception as e:
+                        logger.error("Error al ejecutar la función externa en VirusTotal: %s", e)
+                        resultado_funcion = {
+                            "disponible": False,
+                            "mensaje": "Ocurrió un error al intentar conectar con el servicio externo de VirusTotal."
+                        }
+
+                # 2. Devolver el resultado de la función al modelo en la conversación
+                contents.append(candidato.get("content"))
+                contents.append({
+                    "role": "function",
+                    "parts": [
+                        {
+                            "functionResponse": {
+                                "name": func_name,
+                                "response": {"resultado": resultado_funcion}
+                            }
+                        }
+                    ]
+                })
+
+                payload_seguimiento = {
+                    "system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]},
+                    "contents": contents,
+                    "tools": tools,
+                    "generationConfig": {"temperature": 0.4, "maxOutputTokens": 1500}
+                }
+
+                # Petición de seguimiento usando el mismo cliente activo
+                response_seg = await client.post(
+                    GEMINI_URL,
+                    params={"key": GEMINI_API_KEY},
+                    json=payload_seguimiento
+                )
+                response_seg.raise_for_status()
+                data_seg = response_seg.json()
+
+                candidatos_seg = data_seg.get("candidates", [])
+                if candidatos_seg:
+                    partes_seg = candidatos_seg[0].get("content", {}).get("parts", [])
+                    respuesta_ia = "\n".join(parte.get("text", "") for parte in partes_seg if parte.get("text")).strip()
+                    if respuesta_ia:
+                        guardar_mensaje_chat(user_id, "model", respuesta_ia)
+                        return respuesta_ia
+
+            # Respuesta de texto normal si no hubo llamada a función
+            respuesta_ia = "\n".join(parte.get("text", "") for parte in partes if parte.get("text")).strip()
+            if respuesta_ia:
+                guardar_mensaje_chat(user_id, "model", respuesta_ia)
+                return respuesta_ia
+
+            return "No obtuve respuesta de la IA."
 
     except Exception:
-        logger.exception("Error al comunicarse con Gemini en modo conversación.")
+        logger.exception("Error al comunicarse con Gemini en modo conversación con herramientas.")
         return "Ocurrió un error al procesar tu mensaje con la inteligencia artificial."
-
-
 async def analizar_con_gemini(texto: str):
     if not GEMINI_API_KEY:
         return None
