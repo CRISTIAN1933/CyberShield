@@ -1,0 +1,12 @@
+GUÍA CYBERSHIELD: CASOS FICTICIOS DE PRÁCTICA
+
+Este documento contiene ejemplos inventados para la evaluación de CyberShield. Los nombres, códigos y situaciones no describen organizaciones reales ni incidentes confirmados. Las preguntas deben referirse a esta guía o a sus casos.
+
+CASO HORIZONTE — CSH-17
+En el caso ficticio Horizonte, una supuesta entrega usa una etiqueta verde y pide escanear un código QR para pagar una tasa antes de recibir el paquete. Recomendación: no escanear el código y consultar el envío por los canales oficiales de la empresa de reparto.
+
+CASO FARO — CSH-28
+En el caso ficticio Faro, un falso soporte exige confirmar una cita a las 18:20 y enviar el código de verificación recibido por SMS. Recomendación: no compartir el código y comunicarse con el servicio usando sus canales oficiales.
+
+CASO MAREA — CSH-39
+En el caso ficticio Marea, una publicidad promete duplicar una transferencia en 37 minutos y solicita instalar una aplicación de acceso remoto. Recomendación: no transferir dinero ni instalar aplicaciones por indicación de un desconocido.
