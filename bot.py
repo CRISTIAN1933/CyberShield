@@ -52,7 +52,7 @@ TOKEN = os.getenv("TELEGRAM_TOKEN", "").strip()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 GEMINI_MODEL = os.getenv(
     "GEMINI_MODEL",
-    "gemini-2.5-flash"
+    "gemini-3.1-flash-lite"
 ).strip()
 
 VIRUSTOTAL_API_KEY = os.getenv(
@@ -92,6 +92,7 @@ logging.basicConfig(
     format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
     level=logging.INFO
 )
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 logger = logging.getLogger("CyberShield")
 
@@ -519,7 +520,7 @@ async def conversar_con_gemini(user_id: int, nuevo_mensaje: str):
         async with httpx.AsyncClient(timeout=TIMEOUT) as client:
             response = await client.post(
                 GEMINI_URL,
-                params={"key": GEMINI_API_KEY},
+                headers={"x-goog-api-key": GEMINI_API_KEY},
                 json=payload
             )
             response.raise_for_status()
@@ -591,7 +592,7 @@ async def conversar_con_gemini(user_id: int, nuevo_mensaje: str):
                 # Petición de seguimiento usando el mismo cliente activo
                 response_seg = await client.post(
                     GEMINI_URL,
-                    params={"key": GEMINI_API_KEY},
+                    headers={"x-goog-api-key": GEMINI_API_KEY},
                     json=payload_seguimiento
                 )
                 response_seg.raise_for_status()
@@ -722,7 +723,7 @@ async def analizar_con_gemini(
         async with httpx.AsyncClient(timeout=TIMEOUT) as client:
             response = await client.post(
                 GEMINI_URL,
-                params={"key": GEMINI_API_KEY},
+                headers={"x-goog-api-key": GEMINI_API_KEY},
                 json=payload
             )
             response.raise_for_status()

@@ -36,6 +36,7 @@ class RespuestaGeminiFalsa:
 
 class ClienteGeminiFalso:
     payloads = []
+    headers = []
 
     def __init__(self, timeout):
         pass
@@ -46,8 +47,9 @@ class ClienteGeminiFalso:
     async def __aexit__(self, exc_type, exc_value, traceback):
         pass
 
-    async def post(self, url, params, json):
+    async def post(self, url, headers, json):
         self.payloads.append(json)
+        self.headers.append(headers)
         return RespuestaGeminiFalsa()
 
 
@@ -92,6 +94,7 @@ class AnalisisMultimodalTests(unittest.TestCase):
     def test_incluye_imagen_y_audio_en_la_solicitud_a_gemini(self):
         contenido = b"contenido multimedia de prueba"
         ClienteGeminiFalso.payloads = []
+        ClienteGeminiFalso.headers = []
 
         with patch.object(bot, "GEMINI_API_KEY", "clave-de-prueba"), patch.object(
             bot.httpx, "AsyncClient", ClienteGeminiFalso
@@ -104,6 +107,10 @@ class AnalisisMultimodalTests(unittest.TestCase):
                     ))
 
                     self.assertEqual(resultado.riesgo, "MEDIO")
+                    self.assertEqual(
+                        ClienteGeminiFalso.headers[-1],
+                        {"x-goog-api-key": "clave-de-prueba"}
+                    )
                     partes = ClienteGeminiFalso.payloads[-1]["contents"][0]["parts"]
                     self.assertIn("Revisá este contenido", partes[0]["text"])
                     adjunto = partes[1]["inline_data"]
