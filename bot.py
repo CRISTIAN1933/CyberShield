@@ -75,6 +75,7 @@ GEMINI_URL = (
 VIRUSTOTAL_URL = "https://www.virustotal.com/api/v3"
 
 TIMEOUT = httpx.Timeout(25.0, connect=10.0)
+TIMEOUT_MULTIMEDIA = httpx.Timeout(120.0, connect=10.0)
 TEMP_DIR = BASE_DIR / "temp_files"
 TEMP_DIR.mkdir(exist_ok=True)
 
@@ -720,7 +721,9 @@ async def analizar_con_gemini(
     }
 
     try:
-        async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        async with httpx.AsyncClient(
+            timeout=TIMEOUT_MULTIMEDIA if multimedia else TIMEOUT
+        ) as client:
             response = await client.post(
                 GEMINI_URL,
                 headers={"x-goog-api-key": GEMINI_API_KEY},
@@ -760,6 +763,13 @@ async def analizar_con_gemini(
         print("=" * 60 + "\n")
 
         return resultado
+
+    except httpx.TimeoutException:
+        logger.error(
+            "Se agotó el tiempo de espera de Gemini al analizar %s.",
+            "un archivo multimedia" if multimedia else "un mensaje",
+        )
+        return None
 
     except httpx.HTTPStatusError as error:
         logger.error(

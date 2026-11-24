@@ -37,9 +37,10 @@ class RespuestaGeminiFalsa:
 class ClienteGeminiFalso:
     payloads = []
     headers = []
+    timeouts = []
 
     def __init__(self, timeout):
-        pass
+        self.timeouts.append(timeout)
 
     async def __aenter__(self):
         return self
@@ -95,6 +96,7 @@ class AnalisisMultimodalTests(unittest.TestCase):
         contenido = b"contenido multimedia de prueba"
         ClienteGeminiFalso.payloads = []
         ClienteGeminiFalso.headers = []
+        ClienteGeminiFalso.timeouts = []
 
         with patch.object(bot, "GEMINI_API_KEY", "clave-de-prueba"), patch.object(
             bot.httpx, "AsyncClient", ClienteGeminiFalso
@@ -107,6 +109,7 @@ class AnalisisMultimodalTests(unittest.TestCase):
                     ))
 
                     self.assertEqual(resultado.riesgo, "MEDIO")
+                    self.assertEqual(ClienteGeminiFalso.timeouts[-1].read, 120.0)
                     self.assertEqual(
                         ClienteGeminiFalso.headers[-1],
                         {"x-goog-api-key": "clave-de-prueba"}
@@ -119,6 +122,15 @@ class AnalisisMultimodalTests(unittest.TestCase):
                         base64.b64decode(adjunto["data"]),
                         contenido
                     )
+
+    def test_texto_conserva_tiempo_de_espera_original(self):
+        ClienteGeminiFalso.timeouts = []
+        with patch.object(bot, "GEMINI_API_KEY", "clave-de-prueba"), patch.object(
+            bot.httpx, "AsyncClient", ClienteGeminiFalso
+        ):
+            resultado = asyncio.run(bot.analizar_con_gemini("Mensaje de prueba"))
+        self.assertEqual(resultado.riesgo, "MEDIO")
+        self.assertEqual(ClienteGeminiFalso.timeouts[-1].read, 25.0)
 
     def test_borrar_historial_elimina_resultados_estructurados(self):
         uri = f"file:cybershield_test_{id(self)}?mode=memory&cache=shared"
