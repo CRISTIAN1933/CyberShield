@@ -1,5 +1,5 @@
 
-python-telegram-bot==22.8
+python-telegram-bot[webhooks]==22.8
 python-dotenv
 httpx
 pydantic>=2.9,<3

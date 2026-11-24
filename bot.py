@@ -1849,7 +1849,50 @@ def main():
     logger.info("VirusTotal: %s", "ACTIVADO" if VIRUSTOTAL_API_KEY else "NO CONFIGURADO")
     logger.info("======================================")
 
-    app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+    webhook_url = (
+        os.getenv("WEBHOOK_URL", "").strip()
+        or os.getenv("RENDER_EXTERNAL_URL", "").strip()
+    ).rstrip("/")
+
+    if webhook_url:
+        url = urlparse(webhook_url)
+        if (
+            url.scheme != "https"
+            or not url.hostname
+            or url.username
+            or url.password
+            or url.path
+            or url.params
+            or url.query
+            or url.fragment
+        ):
+            raise RuntimeError(
+                "WEBHOOK_URL debe ser una URL HTTPS base, sin ruta ni parámetros."
+            )
+
+        webhook_secret = os.getenv("WEBHOOK_SECRET", "").strip()
+        if not re.fullmatch(r"[A-Za-z0-9_-]{1,256}", webhook_secret):
+            raise RuntimeError(
+                "WEBHOOK_SECRET debe contener entre 1 y 256 letras, "
+                "números, guiones o guiones bajos."
+            )
+
+        logger.info("Modo webhook activado.")
+        app.run_webhook(
+            listen="0.0.0.0",
+            port=int(os.getenv("PORT", "10000")),
+            url_path="telegram",
+            webhook_url=f"{webhook_url}/telegram",
+            secret_token=webhook_secret,
+            allowed_updates=Update.ALL_TYPES,
+            drop_pending_updates=True,
+        )
+    else:
+        logger.info("Modo polling activado.")
+        app.run_polling(
+            allowed_updates=Update.ALL_TYPES,
+            drop_pending_updates=True,
+        )
 
 
 if __name__ == "__main__":

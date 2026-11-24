@@ -31,9 +31,9 @@ Los cambios respecto de la propuesta original del Hito 1 están en **negrita**.
 | Análisis estructurado | Se activa con `/analizar` y luego se envía un texto, una foto o una nota de voz. Gemini genera riesgo, puntuación, resumen, indicadores, recomendaciones, URLs y certeza; Pydantic valida el resultado. Se guarda como JSON en `data/cybershield.db`, tabla `analisis_estructurados`; también se registra un resumen en `historial` y el resultado se muestra en Telegram. |
 | Dato del módulo avanzado 1 | **Multimodalidad:** entiende fotos y notas de voz durante el modo `/analizar`. El contenido se envía a Gemini para su interpretación. Límite del bot: 14 MB por archivo. Requiere que Gemini esté configurado. |
 | Dato del módulo avanzado 2 | **Flujo guiado:** se inicia con `/reporte`. Pasos: 1) categoría (`phishing`, `enlace sospechoso`, `cuenta comprometida` u `otro`); 2) descripción de 20 a 2000 caracteres; 3) URL completa HTTP/HTTPS o `NO`; 4) urgencia (`baja`, `media` o `alta`); 5) confirmar o cancelar. Las respuestas se validan en cada paso y el reporte confirmado se guarda en SQLite, tabla `reportes_guiados`. |
-| Dónde funciona el bot | En una computadora del equipo, usando Telegram en modo polling. **Todavía no está desplegado en un servidor ni usa webhooks.** |
+| Dónde funciona el bot | En una computadora del equipo, usando Telegram en modo polling. **El código también admite webhooks para Render, pero el despliegue debe completarse y verificarse antes de declararlo en funcionamiento.** |
 | Cómo se reinicia | Detenerlo con `Ctrl+C` en la terminal y volver a iniciarlo desde la carpeta del proyecto con `.\.venv\Scripts\python.exe bot.py`. |
-| Módulos no utilizados | No usa RAG ni despliegue con webhooks. |
+| Módulos no utilizados | No usa RAG. El despliegue con webhooks requiere configurar y verificar el servicio en Render. |
 | Evaluación | Script: `modules/evaluacion.py`. Casos: `tests/casos_evaluacion.py`. El archivo de casos contiene **8 casos**. Ejecutar desde la carpeta del proyecto con `.\.venv\Scripts\python.exe -m modules.evaluacion`; requiere la configuración de Gemini para obtener resultados de IA. |
 
 **Antes de entregar:** completar el usuario real de Telegram del bot; ese dato no se puede deducir de los archivos del proyecto.
