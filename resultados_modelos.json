@@ -1,0 +1,481 @@
+{
+    "fecha": "2026-11-16T21:10:12.038437",
+    "total_modelos": 49,
+    "funcionan": 7,
+    "fallan": 42,
+    "resultados": [
+        {
+            "modelo": "gemini-2.5-flash",
+            "nombre": "Gemini 2.5 Flash",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 404,
+            "error": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+        },
+        {
+            "modelo": "gemini-2.5-pro",
+            "nombre": "Gemini 2.5 Pro",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 404,
+            "error": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+        },
+        {
+            "modelo": "gemini-2.5-flash-preview-tts",
+            "nombre": "Gemini 2.5 Flash Preview TTS",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 400,
+            "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"The requested combination of response modalities (TEXT) is not supported by the model. models/gemini-2.5-flash-preview-tts accepts the following combination of response modalities:\\n* AUDIO\\n\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+        },
+        {
+            "modelo": "gemini-2.5-pro-preview-tts",
+            "nombre": "Gemini 2.5 Pro Preview TTS",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-pro-tts, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro-tts, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-pro-tts, description: Generate content r"
+        },
+        {
+            "modelo": "gemma-4-26b-a4b-it",
+            "nombre": "Gemma 4 26B A4B IT",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 11.78,
+            "intentos": 2,
+            "respuesta": "*   Message: \"Tu cuenta bancaria será bloqueada hoy. Ingresa inmediatamente en este enlace para verificar tus datos.\"\n    *   Role: Cybersecurity Specialist.\n    *   Language: Spanish.\n    *   Required Output:\n        1.  Is it suspicious?\n        2.  Type of threat.\n        3.  Risk indicators found.\n        4.  Recommendations for the user.\n\n    *   *Content:* \"Tu cuenta bancaria será bloqueada hoy.\" (Urgency, fear-mongering).\n    *   *Action:* \"Ingresa inmediatamente en este enlace...\" (Call to action, suspicious link).\n    *   *Purpose:* \"...para verificar tus datos.\" (Data harvesting/credential theft).\n\n    *   **1. ¿Es sospechoso?**\n        *   Yes, absolutely. It's a classic example of a malicious message.\n\n    *   **2. ¿Qué tipo de amenaza podría ser?**\n        *   *Phishing:* Specifically, if it's via SMS, it's *Smishing*. If via email, it's *Phishing*. Since the format is generic, I'll use the term \"Phishing\" (or Smishing) to cover the bases.\n        *   *Goal:* Identity theft, credential harvesting, financial fraud.\n\n    *   **3. ¿Qué indicadores de riesgo encontraste?**\n        *   *Sentido de urgencia (Urgency):* \"será bloqueada hoy\", \"inmediatamente\". This is designed to bypass critical thinking.\n        *   *Amenaza/Miedo (Fear):* Threatening to block the account.\n        *   *Llamado a la acción (Call to Action):* Clicking a link to \"verify data\".\n        *   *Falta de personalización (Lack of personalization):* Doesn't mention the user's name or specific bank details.\n        *   *Enlace sospechoso (Suspicious link):* Even though the link isn't visible in the text provided, the *instruction* to click a link for sensitive data is a massive red flag.\n\n    *   **4. ¿Qué recomendación darías al usuario?**\n        *   *Don't click:* Never click links in unsolicited messages.\n        *   *Don't reply",
+            "error": null
+        },
+        {
+            "modelo": "gemma-4-31b-it",
+            "nombre": "Gemma 4 31B IT",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "gemini-flash-latest",
+            "nombre": "Gemini Flash Latest",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "gemini-flash-lite-latest",
+            "nombre": "Gemini Flash-Lite Latest",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 2.16,
+            "intentos": 1,
+            "respuesta": "Como especialista en ciberseguridad, aquí tienes el análisis detallado del mensaje:\n\n### 1. ¿Es sospechoso?\n**Sí, absolutamente.** Es un mensaje malicioso de alto riesgo.\n\n### 2. ¿Qué tipo de amenaza podría ser?\nSe trata claramente de un ataque de **Phishing** (suplantación de identidad). El objetivo del ciberdelincuente es robar información confidencial (credenciales de acceso bancario, números de tarjetas de crédito, datos personales) simulando ser una entidad legítima.\n\n### 3. ¿Qué indicadores de riesgo encontraste?\n*   **Sentido de urgencia (\"será bloqueada hoy\", \"ingresa inmediatamente\"):** Es una táctica psicológica clásica para generar pánico y evitar que la víctima piense de forma lógica o verifique la autenticidad del mensaje.\n*   **Falta de personalización:** El mensaje es genérico (\"Tu cuenta bancaria\") y no incluye el nombre del cliente ni los últimos dígitos de la cuenta real.\n*   **Llamado a la acción mediante enlace:** Los bancos nunca solicitan verificar datos o desbloquear cuentas mediante enlaces directos enviados por SMS o correo electrónico.\n*   **Ausencia de canales oficiales:** No proporciona un número de teléfono oficial ni indica que se puede ingresar a través de la aplicación oficial del banco.\n\n### 4. ¿Qué recomendación darías al usuario?\n*   **No hacer clic** en ningún enlace del mensaje.\n*   **No ingresar datos personales** ni credenciales bajo ninguna circunstancia.\n*   **Eliminar y bloquear** el número o remitente del mensaje.\n*   Si tienes dudas sobre el estado de tu cuenta, **comunícate con tu banco** utilizando exclusivamente los canales oficiales (el número de teléfono al Dorso de tu tarjeta o escribiendo manualmente la dirección web oficial en el navegador).",
+            "error": null
+        },
+        {
+            "modelo": "gemini-pro-latest",
+            "nombre": "Gemini Pro Latest",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro, description: Generate content input tokens per min"
+        },
+        {
+            "modelo": "gemini-2.5-flash-lite",
+            "nombre": "Gemini 2.5 Flash-Lite",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 404,
+            "error": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n"
+        },
+        {
+            "modelo": "gemini-2.5-flash-image",
+            "nombre": "Nano Banana",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-im"
+        },
+        {
+            "modelo": "gemini-3-flash-preview",
+            "nombre": "Gemini 3 Flash Preview",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 3.85,
+            "intentos": 1,
+            "respuesta": "Como especialista en ciberseguridad, he analizado el mensaje y aquí tienes el dictamen técnico",
+            "error": null
+        },
+        {
+            "modelo": "gemini-3.1-pro-preview",
+            "nombre": "Gemini 3.1 Pro Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro, description: Generate content requests per "
+        },
+        {
+            "modelo": "gemini-3.1-pro-preview-customtools",
+            "nombre": "Gemini 3.1 Pro Preview Custom Tools",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-pro, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-pro, description: Generate content requests per "
+        },
+        {
+            "modelo": "gemini-3.1-flash-lite-preview",
+            "nombre": "Gemini 3.1 Flash Lite Preview",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 3.29,
+            "intentos": 1,
+            "respuesta": "Como especialista en ciberseguridad, he analizado el mensaje que proporcionas. Aquí tienes mi evaluación técnica:\n\n### 1. ¿Es sospechoso?\n**Sí, es altamente sospechoso.** Se trata de un mensaje malicioso diseñado para engañar al usuario. No es una comunicación legítima de ninguna entidad bancaria seria.\n\n### 2. ¿Qué tipo de amenaza podría ser?\nSe trata de un ataque de **Phishing** (suplantación de identidad). El objetivo principal es el **robo de credenciales** (usuario y contraseña) o información financiera sensible (números de tarjeta, códigos CVV, etc.) mediante el engaño.\n\n### 3. Indicadores de riesgo encontrados\nHe identificado varios patrones típicos de ingeniería social utilizados por ciberdelincuentes:\n\n*   **Sentido de urgencia artificial:** El uso de frases como \"hoy\" e \"inmediatamente\" busca anular tu capacidad de pensamiento crítico y obligarte a actuar por miedo o impulso.\n*   **Amenaza de consecuencias negativas:** El aviso de \"bloqueo de cuenta\" es una táctica clásica para generar pánico y que el usuario no se detenga a verificar la veracidad del mensaje.\n*   **Llamada a la acción (CTA) sospechosa:** La solicitud de ingresar a un enlace para \"verificar datos\" es el método estándar para redirigirte a una página web falsa que imita la apariencia del banco real.\n*   **Falta de personalización:** El mensaje es genérico. Los bancos legítimos suelen dirigirse a ti por tu nombre o utilizan canales de comunicación seguros dentro de su propia aplicación oficial.\n\n### 4. Recomendación para el usuario\nSi recibes este mensaje, sigue estas instrucciones estrictamente:\n\n1.  **NO hagas clic en el enlace:** Bajo ninguna circunstancia accedas al link proporcionado.\n2.  **No respondas al mensaje:** Hacerlo solo confirmaría a los atacantes que tu número o correo está activo.\n3.  **Verifica por canales oficiales:** Si tienes dudas sobre el estado de tu cuenta, cierra el mensaje y entra a tu banca móvil o sitio web oficial escribiendo la dirección manualmente en tu navegador, o llama al número de atención al cliente que aparece al reverso de tu tarjeta física.\n4.  **Reporta y bloquea:** Marca el",
+            "error": null
+        },
+        {
+            "modelo": "gemini-3.1-flash-lite",
+            "nombre": "Gemini 3.1 Flash Lite",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 3.46,
+            "intentos": 1,
+            "respuesta": "Como especialista en ciberseguridad, he analizado el mensaje que proporcionas. Aquí tienes mi evaluación técnica:\n\n### 1. ¿Es sospechoso?\n**Sí, es altamente sospechoso.** Se trata de un mensaje malicioso diseñado para engañar al usuario. No es una comunicación legítima de ninguna entidad bancaria seria.\n\n### 2. ¿Qué tipo de amenaza podría ser?\nSe trata de un ataque de **Phishing** (suplantación de identidad). El objetivo principal es el **robo de credenciales** (usuario y contraseña) o información financiera (números de tarjeta, códigos CVV, etc.) para realizar fraudes económicos o robo de identidad.\n\n### 3. Indicadores de riesgo encontrados\nHe identificado los siguientes patrones típicos de un ataque de ingeniería social:\n\n*   **Sentido de urgencia artificial:** El uso de frases como \"será bloqueada hoy\" e \"inmediatamente\" busca anular tu capacidad de pensamiento crítico, obligándote a actuar por miedo o impulso.\n*   **Llamada a la acción (Call to Action) sospechosa:** Los bancos nunca solicitan a sus clientes que ingresen datos sensibles a través de enlaces enviados por SMS, WhatsApp o correo electrónico.\n*   **Falta de personalización:** El mensaje es genérico. No menciona tu nombre ni los últimos dígitos de tu cuenta, lo cual es estándar en comunicaciones oficiales de bancos.\n*   **Coerción:** La amenaza de un bloqueo de cuenta es una táctica clásica para que la víctima acceda al enlace sin verificar la autenticidad del remitente.\n\n### 4. Recomendación para el usuario\nSi recibes este mensaje, sigue estos pasos estrictamente:\n\n1.  **NO hagas clic en el enlace:** Hacerlo podría instalar malware en tu dispositivo o redirigirte a una página web falsa diseñada para capturar tus datos.\n2.  **No respondas al mensaje:** Hacerlo solo confirma a los atacantes que tu número o correo está activo, lo que te hará blanco de más ataques.\n3.  **Verifica por canales oficiales:** Si tienes dudas sobre el estado de tu cuenta, cierra el mensaje y accede a tu banco a través de su **aplicación oficial** o escribiendo manualmente la dirección web (URL) del banco en tu navegador. Nunca uses enlaces externos.\n4.  **",
+            "error": null
+        },
+        {
+            "modelo": "gemini-3-pro-image-preview",
+            "nombre": "Nano Banana Pro",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3-pro-image, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3-pro-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3-pro-image, description: Generate content input to"
+        },
+        {
+            "modelo": "gemini-3-pro-image",
+            "nombre": "Nano Banana Pro",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3-pro-image, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3-pro-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3-pro-image, description: Generate content r"
+        },
+        {
+            "modelo": "nano-banana-pro-preview",
+            "nombre": "Nano Banana Pro",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3-pro-image, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3-pro-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3-pro-image, description: Generate content input to"
+        },
+        {
+            "modelo": "gemini-3.1-flash-image-preview",
+            "nombre": "Nano Banana 2",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-flash-image, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-flash-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-flash-image, description: Generate cont"
+        },
+        {
+            "modelo": "gemini-3.1-flash-image",
+            "nombre": "Nano Banana 2",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-flash-image, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-flash-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-flash-image, description: Genera"
+        },
+        {
+            "modelo": "gemini-3.1-flash-lite-image",
+            "nombre": "Nano Banana 2 Lite",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-3.1-flash-lite-image, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-flash-lite-image, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-3.1-flash-lite-image, desc"
+        },
+        {
+            "modelo": "gemini-nano-banana-2.1",
+            "nombre": "Nano Banana 2.1",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-nano-banana-2.1, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-nano-banana-2.1, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-nano-banana-2.1, description: Genera"
+        },
+        {
+            "modelo": "gemini-3.5-flash",
+            "nombre": "Gemini 3.5 Flash",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "gemini-3.5-flash-lite",
+            "nombre": "Gemini 3.5 Flash Lite",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 2.26,
+            "intentos": 1,
+            "respuesta": "Como especialista en ciberseguridad, aquí tienes el análisis detallado del mensaje:\n\n**1. ¿Es sospechoso?**\n**Sí, altamente sospechoso.** Cumple con todos los patrones clásicos de un intento de fraude digital.\n\n**2. Qué tipo de amenaza podría ser:**\nSe trata claramente de un ataque de **Phishing** (suplantación de identidad). El objetivo es engañar a la víctima para que revele información confidencial, como credenciales de acceso a la banca en línea, números de tarjetas de crédito o datos personales.\n\n**3. Qué indicadores de riesgo encontraste:**\n*   **Sentido de urgencia (\"hoy\", \"inmediatamente\"):** Es una táctica psicológica diseñada para generar pánico y evitar que la víctima piense con claridad o verifique la autenticidad de la información.\n*   **Amenaza de bloqueo:** Los bancos legítimos no suelen amenazar con bloqueos inmediatos a través de mensajes de texto o correos electrónicos informales.\n*   **Llamado a la acción mediante enlace:** Los mensajes legítimos de instituciones financieras rara vez incluyen enlaces directos para \"verificar datos\", y mucho menos exigen ingresar credenciales por esa vía.\n*   **Falta de personalización:** El mensaje es genérico (\"Tu cuenta bancaria\") y no menciona el nombre del banco ni los datos específicos del cliente.\n\n**4. Qué recomendación darías al usuario:**\n*   **No hacer clic en el enlace:** Hacerlo podría redirigir a una página web falsa idéntica a la del banco o descargar software malicioso (malware).\n*   **No proporcionar ningún dato:** Nunca compartas contraseñas, PINs o códigos de verificación.\n*   **Verificar por canales oficiales:** Si tienes dudas sobre el estado de tu cuenta, ingresa manualmente a la aplicación oficial de tu banco o llama al número de atención al cliente que aparece al reverso de tu tarjeta.\n*   **Bloquear y reportar:** Bloquea el número o correo remitente y reporta el mensaje como spam/phishing.",
+            "error": null
+        },
+        {
+            "modelo": "gemini-omni-flash-preview",
+            "nombre": "Gemini Omni Flash Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-omni-1.1-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-omni-1.1-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-omni-1.1-flash, description: Generate content"
+        },
+        {
+            "modelo": "gemini-omni-1.1-flash",
+            "nombre": "Gemini Omni 1.1 Flash",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-omni-1.1-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-omni-1.1-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-omni-1.1-flash, description: Generate content"
+        },
+        {
+            "modelo": "gemini-omni-1.2-flash",
+            "nombre": "Gemini Omni 1.2 Flash",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-omni-1.2-flash, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-omni-1.2-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-omni-1.2-flash, description: Generate "
+        },
+        {
+            "modelo": "gemini-3.5-transcribe",
+            "nombre": "Gemini 3.5 Transcribe",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "El modelo no devolvió texto utilizable."
+        },
+        {
+            "modelo": "gemini-3.6-flash",
+            "nombre": "Gemini 3.6 Flash",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "gemini-3.7-flash",
+            "nombre": "Gemini 3.7 Flash",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "gemini-3.8-flash",
+            "nombre": "Gemini 3.8 Flash",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "gemini-4-argon",
+            "nombre": "Gemini 4 Argon",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-4-argon, description: Generate content input tokens per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-4-argon, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-4-argon, description: Generate content requests per minute"
+        },
+        {
+            "modelo": "gemini-4-carbon",
+            "nombre": "Gemini 4 Carbon",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-4-carbon, description: Generate content input tokens per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-4-carbon, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-4-carbon, description: Generate content "
+        },
+        {
+            "modelo": "gemini-4-hydrogen",
+            "nombre": "Gemini 4 Hydrogen",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "The read operation timed out"
+        },
+        {
+            "modelo": "lyria-3-clip-preview",
+            "nombre": "Lyria 3 Clip Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: lyria-3-clip, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: lyria-3-clip, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: lyria-3-clip, description: Generate content requests per day li"
+        },
+        {
+            "modelo": "lyria-3-pro-preview",
+            "nombre": "Lyria 3 Pro Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: lyria-3-pro, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: lyria-3-pro, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: lyria-3-pro, description: Generate content requests per day limit"
+        },
+        {
+            "modelo": "lyria-3.5",
+            "nombre": "Lyria 3.5",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: lyria-3-pro, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: lyria-3-pro, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: lyria-3-pro, description: Generate content requests per day limit"
+        },
+        {
+            "modelo": "gemini-3.1-flash-tts-preview",
+            "nombre": "Gemini 3.1 Flash TTS Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 400,
+            "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+        },
+        {
+            "modelo": "gemini-3.8-flash-tts",
+            "nombre": "Gemini 3.8 Flash TTS",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "El modelo no devolvió texto utilizable."
+        },
+        {
+            "modelo": "gemini-3.8-flash-lite-tts",
+            "nombre": "Gemini 3.8 Flash Lite TTS",
+            "estado": "ERROR",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "error": "El modelo no devolvió texto utilizable."
+        },
+        {
+            "modelo": "gemini-robotics-er-2-preview",
+            "nombre": "Gemini Robotics-ER 2 Preview",
+            "estado": "FUNCIONA",
+            "tiempo_segundos": 2.69,
+            "intentos": 1,
+            "respuesta": "Como especialista en ciberseguridad, aquí tienes el análisis del mensaje:\n\n### 1.",
+            "error": null
+        },
+        {
+            "modelo": "gemini-2.5-computer-use-preview-10-2025",
+            "nombre": "Gemini 2.5 Computer Use Preview 10-2025",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: computer-use-preview, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: computer-use-preview, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: computer-use-preview, description: Generate con"
+        },
+        {
+            "modelo": "antigravity-preview-05-2026",
+            "nombre": "Antigravity Agent Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 400,
+            "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"This model only supports Interactions API.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+        },
+        {
+            "modelo": "antigravity-preview-09-2026",
+            "nombre": "Antigravity Agent Preview",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 400,
+            "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"This model only supports Interactions API.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+        },
+        {
+            "modelo": "antigravity-preview-latest",
+            "nombre": "Antigravity Agent Preview Latest",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 1,
+            "respuesta": null,
+            "codigo_http": 400,
+            "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"This model only supports Interactions API.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+        },
+        {
+            "modelo": "deep-research-max-preview-04-2026",
+            "nombre": "Deep Research Max Preview (Apr-21-2026)",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: deep-research-pro-preview, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: deep-research-pro-preview, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: deep-research-pro-preview, descriptio"
+        },
+        {
+            "modelo": "deep-research-preview-04-2026",
+            "nombre": "Deep Research Preview (Apr-21-2026)",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: deep-research-pro-preview, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: deep-research-pro-preview, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: deep-research-pro-preview, descriptio"
+        },
+        {
+            "modelo": "deep-research-pro-preview-12-2025",
+            "nombre": "Deep Research Pro Preview (Dec-12-2025) [Rerouted]",
+            "estado": "ERROR HTTP",
+            "tiempo_segundos": null,
+            "intentos": 2,
+            "respuesta": null,
+            "codigo_http": 429,
+            "error": "{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: deep-research-pro-preview, description: Generate content input tokens per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: deep-research-pro-preview, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: deep-research-pro-preview, descriptio"
+        }
+    ]
+}
